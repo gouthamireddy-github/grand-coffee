@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    overflow: auto;
+    scrollbar-width: none;
+}
+:root{
+   --primary-color: white;
+   --secondary-color: rgb(249, 99, 82);
+   --accent-color: black;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 1rem;
+    font-size: clamp(10px,1.2rem,1.2rem);
+}
+h1{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+nav{
+    display: flex;
+    gap: 30px;
+    /* clip-path: polygon(0 0,100% 0,0 0); */
+}
+nav a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+nav a:hover,nav .icon:hover{
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+#check,.label{
+    display: none;
+}
+@media screen and (max-width:800px) {
+    nav{
+        display: none;
+    }
+    .label{
+        display: flex;
+        align-self: start;
+    }
+    #check:checked~nav{
+        display: flex;
+        flex-direction: column;
+        color: black;
+        /* position: absolute;
+        top: 55px;
+        left: 0; */
+        align-items: center;
+        font-size: 1rem;
+        gap: 10px;
+        width: 100%;
+        background-color: var(--accent-color);
+    }
+    header h1{
+        font-size: 1rem;
+        align-self: flex-start;
+    }
+}
+
+.home{
+    background-image: url('https://www.coffeeday.com/img/aboutus/aboutus-missionbanner.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    /* height: 100vh; */
+    display: grid;
+    place-items: center;
+}
+.home1{
+    /* /* height: 80%; */
+    /* width: 100%; */
+    display: grid;
+    align-items: space-between;
+    gap: 10px;
+    padding: 5rem;
+}
+.home1 h3{
+    font-size: 5rem;
+}
+.outstanding{
+    font-weight: 300;
+   
+}
+.shop,.text{
+    color: var(--primary-color);
+}
+.text{
+    width: 90%;
+}
+button{
+    width: fit-content;
+    padding: 1rem 3rem;
+    border: none;
+    transition: 0.4s ease;
+}
+.learn{
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    
+}
+.carousel-icon{
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    padding: .2rem 1rem;
+}
+button:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+@media screen and (max-width : 800px) {
+    .home1 h3{
+        font-size: 1.5rem;
+        
+    }
+    .home1{
+        padding: 2rem;
+    }
+    .home1 *{
+        font-size: .7rem;
+    }
+}
+/* about section */
+.about{
+    display: grid;
+    place-items: center;
+    /* height: fit-content; */
+}
+.about1{
+   /* width: 80vw;
+   height: 80vh; */
+   display: grid;
+   grid-template-columns: repeat( 2 , 1fr );
+   gap: 90px;
+   padding: 5rem;
+}
+.about2{
+   display: grid;
+   align-items: space-around;
+}
+.about2 > *{
+    margin: 20px;
+}
+.about2 h3{
+    color: var(--secondary-color);
+    font-size: clamp(10px,2.5rem,50px);
+}
+.about2 p{
+    font-weight: 300;
+}
+.about2 button{
+    padding: .5rem 3rem;
+    font-size: clamp(10px,1rem,15px);
+    background-color: var(--accent-color);
+    color: white;
+}
+img{
+   width: 100%;
+   height: 100%;
+}
+@media screen and (max-width:800px) {
+    .about1{
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    .about2 h3{
+        font-size: 1.5rem;
+    }
+    .about2>*{
+        font-size: .8rem;
+    }
+}
+/* gallery section */
+.gallery{
+    /* display: grid; */
+    /* height: fit-content; */
+   
+}
+.gallery1{
+    /* height: 190vh;
+    width: 80vw; */
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(3,1fr);
+    padding: 6rem;
+    
+}
+.gallery1 h3{
+    grid-column: 1/4;
+    justify-self: center;
+    font-size: clamp(10px,2.5rem,60px);
+    color: var(--secondary-color);
+}
+.gallery1 p{
+    grid-column: 1/4;
+    font-weight: 300;
+}
+.gallery1 button{
+    grid-column: 1/4;
+    justify-self: center;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: clamp(10px,1.1rem,20px);
+    padding: .5rem 4rem;
+}
+.gallery1 div{
+    display: grid;
+}
+ .gallery1 .icon{
+    font-size: 50px;
+    position: absolute;
+    transition: 0.4s ease;
+    align-self: center;
+    justify-self: center;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    /* z-index: 1;  */
+ }
+.gallery1 .img{
+    position: relative;
+    transition: 0.4s ease;
+} 
+.gallery1>.img:hover .icon{
+    z-index: 1;
+}
+.icon:hover{
+    color: var(--secondary-color);
+}
+button:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.gallery1 .img:hover{
+    opacity: 0.3;
+    cursor: pointer;
+    transform: scale(1.1 );
+}
+@media screen and (max-width : 800px) {
+    .gallery1{
+        grid-template-columns: 1fr;  
+        padding: 2rem;
+        place-items: center;
+        gap: 1rem;
+        /* overflow: hidden; */
+        /* width: 80vw; */
+        /* box-sizing: border-box; */
+    }
+    .gallery1 > *{
+        grid-column: 1;
+    }
+    .gallery1 h3{
+        font-size: 1.5rem;
+    }
+    .gallery1>*{
+        font-size: .8rem;
+    }
+    .gallery1>div>.img{
+        width: 90vw;
+    }
+}   
+/* service section */
+.service{
+    display: grid;
+    height: fit-content;
+    place-items: center;
+    background-image: url('./service-img.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.service1{
+    /* width: 90vw;
+    height: 90vh; */
+    display: grid;
+    /* place-items: center; */
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    padding: 2rem;
+}
+.service1 h3{
+    grid-column: 1/4;
+    justify-self: center;
+    font-size: clamp(10px,2.5rem,60px);
+    color: var(--primary-color);
+}
+.service1>p{
+    grid-column: 1/4;
+    justify-self: center;
+    color: var(--primary-color);
+}
+.service1>div{
+    height: 50vh;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+    padding: 1rem;
+}
+.service1 > div > *{
+    margin: 1rem;
+}
+.service1 div button{
+   display: none;
+   background-color: black;
+   color: white;
+   transition: 0.4s ease;
+}
+.sub-service1>.ion{
+    font-size: clamp(10px,2.5rem,30px);
+    color: var(--accent-color);
+}
+.svg1,.svg2{
+    height: 30px;
+}
+.service1>div:hover{
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    height: 60vh;
+}
+.service1 div:hover button{
+    display: flex;
+}
+@media screen and (max-width : 800px) {
+    .service1{
+        grid-template-columns: 1fr;
+        place-items: center;
+        padding: 2rem ;
+        gap: 1rem;
+    }
+    .service1 > *{
+        grid-column: 1;
+        font-size: .8rem;
+    }
+    .service1 > div{
+        width: 90vw;
+        height: 30vh;
+    }
+    .service1 > div:hover{
+        width: 90vw;
+        height: 40vh;
+    }
+    .service1 > h3{
+        font-size: 1.5rem;
+    }
+}
+/* testimonial section */
+.testimonial{
+    display: grid;
+    place-items: center;
+    height: fit-content;
+}
+.testimonial1{
+    /* width: 80vw;
+    height: 70vh; */
+    display: grid;
+    padding: 3rem;
+}
+.testimonial1 h3{
+    font-size: clamp(10px,2rem,40px);
+    color: var(--secondary-color);
+    
+}
+.testimonial1 h4{
+    font-size: clamp(10px,2rem,25px);
+    color: var(--secondary-color);
+}
+.testimonial1 > *{
+    margin: 1.5rem;
+}
+.p-2{
+    /* width: 0px;
+    height: 20px; */
+    border-radius: 50px;
+}
+.carousel-item h4{
+    /* margin-left: 10rem; */
+    word-spacing: 3rem;
+}
+@media screen and (orientation : portrait) {
+    .testimonial1 h3{
+        font-size: 1.5rem;
+    }
+    .testimonial1 h4{
+        font-size: 1.5rem;
+    }
+    .testimonial1>*{
+        font-size: .8rem;
+    }
+    .testimonial1 .box{
+        width: 20px;
+        height: 10px;
+    }
+    .testimonial1{
+        padding: 1rem;
+    }
+}
+/* contanct section */
+.contanct{
+    display: grid;
+}
+.contanct1{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* align-items: space-between; */
+    height: fit-content;
+    gap: 3px;
+}
+.contanct1 h3{
+    grid-column: 1/3;
+    font-size: clamp(2rem,5vw,3rem);
+    color: var(--secondary-color);
+    justify-self: center;
+    margin-bottom: 3rem;
+}
+.contanct1 .form{
+    background-image: url('https://www.treebo.com/blog/wp-content/uploads/2018/04/Best-Cafes-in-Hyderabad.jpg');
+    /* height: fit-content; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 0.5rem;
+}
+.form input,.form textarea{
+    width: 95%;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 50px;
+}
+.contanct1 .form button{
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem  4rem;
+    border-radius: 50px;
+    transition: 0.4s ease;
+    margin: 0.3rem;
+}
+.form button:hover{
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+.contanct1 .map{
+    width: 100%;
+}
+
+@media screen and (max-width : 800px) {
+    .contanct1{
+        grid-template-columns: 1fr;
+    }
+    .contanct1>*{
+        grid-column: 1;
+    }
+    .contanct1 h3{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (orientation: portrait) {
+    .contanct1  *{
+        font-size: 1rem;
+    }
+}
+/* footer section */
+.footer1{
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 4rem;
+    gap: 1.5rem;
+}
+.footer h1{
+    margin-bottom: 1.5rem;
+}
+.footer p{
+    font-weight: 200;
+}
+.footer h5{
+    font-weight: 300;
+    line-height: 1.9rem;
+}
+.footer-contanct{
+    word-spacing: .1rem;
+}
+@media screen and (max-width : 800px) {
+    .footer1{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width : 650px) {
+    .footer1{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (orientation : portrait) {
+    .footer1 div{
+        font-size: 1rem;
+    }
+}
