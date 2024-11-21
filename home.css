@@ -268,6 +268,10 @@ button:hover{
     .gallery1>div>.img{
         width: 90vw;
     }
+    .gallery1 .icon{
+        align-self: center;
+        justify-self: center;
+    }
 }   
 /* service section */
 .service{
