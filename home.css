@@ -268,11 +268,13 @@ button:hover{
     .gallery1>div>.img{
         width: 90vw;
     }
+}   
+@media screen and (orientation:portrait) {
     .gallery1 .icon{
         align-self: center;
         justify-self: center;
     }
-}   
+}
 /* service section */
 .service{
     display: grid;
